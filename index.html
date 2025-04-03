@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Трекер инициативы D&D 5e</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Трекер инициативы D&D 5e</h1>
+
+		<div class="main-content">
+			<div class="initiative-section">
+				<div class="controls">
+					<div class="input-group">
+						<input type="text" id="name-input" placeholder="Имя персонажа/монстра">
+						<input type="number" id="initiative-input" placeholder="Инициатива" min="1" max="50">
+						<input type="number" id="ac-input" placeholder="КД" min="1" max="50">
+						<input type="number" id="hp-input" placeholder="ХП" min="1">
+						<select id="multiattack-select">
+							<option value="no">Нет мультиатаки</option>
+							<option value="yes">Есть мультиатака</option>
+						</select>
+						<button id="add-player-btn"><i class="fas fa-user-plus"></i> Игрок</button>
+						<button id="add-enemy-btn"><i class="fas fa-dragon"></i> Монстр</button>
+					</div>
+				</div>
+
+				<div class="tracker-container">
+					<div class="tracker-header">
+						<span>Текущий ход: <span id="current-turn">-</span></span>
+						<button id="next-turn-btn"><i class="fas fa-forward"></i> Следующий ход</button>
+						<span class="round-counter">Раунд: <span id="round-count">1</span></span>
+					</div>
+
+					<div id="initiative-list">
+						<!-- Здесь будут появляться участники -->
+					</div>
+				</div>
+			</div>
+
+			<div class="details-section">
+				<div class="conditions-section">
+					<h2>Состояния активного юнита</h2>
+					<div id="current-unit-conditions">
+						<p>Выберите участника</p>
+					</div>
+
+					<div class="add-condition">
+						<h3>Добавить состояние</h3>
+						<select id="condition-select">
+							<option value="">Выберите состояние</option>
+							<option value="Ослеплен">Ослеплен</option>
+							<option value="Оглушён">Оглушён</option>
+							<option value="Окаменевший">Окаменевший</option>
+							<option value="Очарованный">Очарованный</option>
+							<option value="Испуган">Испуган</option>
+							<option value="Невидимый">Невидимый</option>
+							<option value="Обездвижен">Обездвижен</option>
+							<option value="Отравлен">Отравлен</option>
+							<option value="Парализован">Парализован</option>
+							<option value="Сбит с ног">Сбит с ног</option>
+							<option value="Опутан">Опутан</option>
+						</select>
+						<input type="number" id="condition-duration" min="1" value="1" placeholder="Ходов">
+						<button id="add-condition-btn"><i class="fas fa-plus"></i> Добавить</button>
+					</div>
+				</div>
+
+				<div class="notes-section">
+					<h2>Дополнительная информация</h2>
+					<textarea id="unit-notes" placeholder="Заметки о персонаже..."></textarea>
+					<button id="save-notes-btn"><i class="fas fa-save"></i> Сохранить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
